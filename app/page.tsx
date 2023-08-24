@@ -3,6 +3,7 @@ import { signOut, useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import Navbar from '@/components/Navbar';
+import Billboard from '@/components/Billboard';
 
 export default function Home() {
   const { data: user } = useCurrentUser();
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <Billboard />
     </>
   );
 }
