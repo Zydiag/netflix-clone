@@ -9,7 +9,6 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 
 const Auth = () => {
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -54,6 +53,9 @@ const Auth = () => {
         </nav>
         <div className="flex justify-center">
           <div className="bg-black bg-opacity-70 px-16 py-16  self-center mt-2 lg:w-2/5 lg:max-w-md w-full rounded-md">
+            <p className="text-red-600 font-semibold mb-3">
+              Do not use your real Netflix Password
+            </p>
             <h2 className="text-4xl text-white mb-8 font-semibold">
               {variant === 'login' ? 'Sign In' : 'Register'}
             </h2>
