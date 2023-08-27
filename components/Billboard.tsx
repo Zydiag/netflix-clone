@@ -3,9 +3,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import PlayButton from './PlayButton';
 import useInfoModal from '@/hooks/useInfoModal';
+import { divide } from 'lodash';
 
 const Billboard = () => {
-  const { data } = useBillboard();
+  const { data,isLoading } = useBillboard();
   const { openModal } = useInfoModal();
 
   const handleOpenModal = useCallback(() => {
@@ -24,7 +25,11 @@ const Billboard = () => {
     // the server HTML and also wont render during the first client-side render.
     return null;
   } else {
+
     const date = new Date();
+    if(isLoading){
+      return <div className="text-white text-xl md:text-3xl h-[56.25vw] flex justify-center items-center">Loading...</div>
+    }
     return (
       <main className="relative h-[56.25vw]">
         <video

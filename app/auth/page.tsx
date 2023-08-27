@@ -14,6 +14,7 @@ const Auth = () => {
   const [password, setPassword] = useState('');
 
   const [variant, setVariant] = useState('login');
+  const [loading, setLoading] = useState(false);
 
   const toggleVariant = useCallback(() => {
     setVariant((prev) => (prev === 'login' ? 'register' : 'login'));
@@ -21,12 +22,15 @@ const Auth = () => {
 
   const login = useCallback(async () => {
     try {
+      setLoading(true);
       await signIn('credentials', {
         email,
         password,
         callbackUrl: '/profiles',
       });
+      setLoading(false);
     } catch (error) {
+      setLoading(false)
       console.log(error);
     }
   }, [email, password]);
@@ -45,6 +49,9 @@ const Auth = () => {
     }
   }, [email, name, password, login]);
 
+  if(loading){
+    return <div className="text-white text-xl md:text-3xl h-[56.25vw] flex justify-center items-center">Loading...</div>
+  }
   return (
     <div className="relative h-full w-full bg-[url(/images/hero.jpg)] bg-no-repeat bg-center bg-cover bg-fixed">
       <div className="bg-black w-full h-full lg:bg-opacity-50">
