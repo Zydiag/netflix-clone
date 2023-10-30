@@ -6,7 +6,7 @@ Netflix clone created using `Nextjs`. Other tech stack used:
 - Prisma
 - MongoDB
 
-### Website: [Link](https://netflix-clone-neon-alpha-44.vercel.app/)
+### Website: [Link](https://netflix-clone-zydiag.vercel.app/)
 
 ### ScreenShot 
 ![image](https://github.com/Zydiag2/netflix-clone-fork/assets/137907965/4b616d4c-a64c-4509-8b3d-cf6510374411)
